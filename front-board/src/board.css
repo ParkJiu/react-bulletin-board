@@ -102,3 +102,9 @@ button {
   height: 80vh;
   margin: auto;
 }
+
+/* page footer */
+.footer {
+  text-align: center;
+  color: var(--color-dark-blue);
+}

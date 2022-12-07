@@ -2,9 +2,11 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <div>
-      
-    </div>
+    <section class="footer">
+      <p>
+        BD - All rights reserved
+      </p>
+  </section>
   );
 }
 
