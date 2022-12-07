@@ -13,7 +13,7 @@
 --color-yellow: #fff7d1;
 --color-orange:#feb546;
 --color-black: #000000;
-  
+
 /* Font size */
 --font-large: 48px;
 --font-medium: 28px;
@@ -36,15 +36,6 @@
 /* Universal tag */
 * { box-sizing: border-box; }
 
-h1 {
-  margin: 0;
-}
-ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-}
-
 button { 
   cursor: pointer; 
   border: none; 
@@ -57,22 +48,57 @@ button {
   background-color: var(--color-primary-blue);
   color: white;
 }
-.navbar {
+
+/* page header */
+.header {
   display: flex;
   justify-content: space-between;
-  background-color: var(--color-light-blue);
-  color: var(--color-white);
-  height: 100px;
+  margin: 10px 0;
+}
+.icon {
+  margin: 0 10px;
+}
+.navbar {
+  padding: 16px;
 }
 .navbar__menu {
-  
+  font-weight: var(--weight-regular);
+  padding: 13px;
+}
+.header__menu__item {
+  text-decoration: none;
+  color: var(--color-dark-blue);
+  font-weight: var(--weight-bold);
+  margin: 0 19px;
 }
 .navbar__menu__item {
   text-decoration: none;
-  padding: 10px;
+  padding: 16px;
   color: inherit;
 }
 .login__btn {
-  
+  border-radius: 25px;  
+  font-weight: var(--weight-bold);
+}
+.navbar__menu__item:hover {
+  color: var(--color-primary-blue);
+  border-radius: 25px;
+  transition: all var(--animation-duration) ease-in;
+  opacity: 0.8;
 }
 
+/* home page */
+.home {
+  background-color: var(--color-light-blue);
+  margin: auto;
+  width: 80vw;
+  height: 80vh;
+}
+
+/* board page */
+.board {
+  background-color: beige;
+  width: 80%;
+  height: 80vh;
+  margin: auto;
+}

@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import { login, logout, onUserStateChange } from '../api/firebase';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faClipboard } from "@fortawesome/free-solid-svg-icons";
 
 export default function Navbar() {
   const [user, setUser] = useState();
@@ -19,21 +21,17 @@ export default function Navbar() {
     logout().then(setUser);
   };
   return (
-    <div className='navbar'>
       <header className='header'>
-        <Link to='/' className='navbar__menu__item'>
-          <h3>게시판</h3>
+      <Link to='/' className='header__menu__item'>
+        <h3><FontAwesomeIcon icon={faClipboard} className='icon'/>게시판</h3>
         </Link>
+        <nav className='navbar__menu'>
+          <Link to='/' className='navbar__menu__item'>Home</Link>
+          <Link to='board' className='navbar__menu__item'>Board</Link>
+          {!user && <button onClick={handleLogin} className='login__btn'>로그인</button>}
+          {user && <button onClick={handleLogout} className='login__btn'>로그아웃</button>}
+        </nav>
       </header>
-      <nav className='navbar__menu'>
-        <ul className='navbar__menu'>
-          <li><Link to='/' className='navbar__menu__item'>Home</Link></li>
-          <li><Link to='board' className='navbar__menu__item'>Board</Link></li>
-        {!user && <button onClick={handleLogin} className='login__btn'>로그인</button>}
-        {user && <button onClick={handleLogout} className='login__btn'>로그아웃</button>}
-        </ul>
-      </nav>
-    </div>
   );
 }
 
