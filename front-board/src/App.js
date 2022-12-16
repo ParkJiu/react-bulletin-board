@@ -3,6 +3,7 @@ import Board from './pages/Board';
 import Home from './pages/Home';
 import NotFound from './pages/NotFound';
 import Root from './pages/Root';
+import BoardInsert from './pages/BoardInsert';
 import './board.css'
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
   {
     path: "/board",
     element: <Board />
+  },
+  {
+    path: "/boardInsert",
+    element: <BoardInsert />
   }
 ]);
 
